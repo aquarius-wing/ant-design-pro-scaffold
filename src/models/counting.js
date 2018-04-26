@@ -1,5 +1,3 @@
-import { queryNotices } from '../services/api';
-
 export default {
   namespace: 'counting',
 

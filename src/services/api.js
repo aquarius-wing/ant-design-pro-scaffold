@@ -77,3 +77,9 @@ export async function fakeRegister(params) {
 export async function queryNotices() {
   return request('/api/notices');
 }
+
+export async function fakeCount() {
+  return request('/api/fake_count', {
+    method: 'GET',
+  });
+}

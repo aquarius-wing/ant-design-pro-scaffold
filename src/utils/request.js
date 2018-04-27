@@ -43,9 +43,12 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
-  const defaultOptions = {
+  let defaultOptions = {
     credentials: 'include',
   };
+  if(localStorage.hasOwnProperty("token")){
+    defaultOptions.headers = {authentication:localStorage.getItem("token")}
+  }
   const newOptions = { ...defaultOptions, ...options };
   if (newOptions.method === 'POST' || newOptions.method === 'PUT') {
     if (!(newOptions.body instanceof FormData)) {

@@ -77,6 +77,7 @@ const proxy = {
       res.send({
         status: 'ok',
         type,
+        token: '123',
         currentAuthority: 'admin',
       });
       return;
@@ -85,6 +86,7 @@ const proxy = {
       res.send({
         status: 'ok',
         type,
+        token: '123',
         currentAuthority: 'user',
       });
       return;
@@ -134,6 +136,9 @@ const proxy = {
       message: 'Unauthorized',
       path: '/base/category/list',
     });
+  },
+  'GET /api/fake_count': (req, res) => {
+    res.send({ status: 'ok', count: 20 });
   },
 };
 

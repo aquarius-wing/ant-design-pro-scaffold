@@ -2,9 +2,7 @@ const path = require('path');
 
 export default {
   entry: 'src/index.js',
-  extraBabelPlugins: [
-    ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
-  ],
+  extraBabelPlugins: [['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }]],
   env: {
     development: {
       extraBabelPlugins: ['dva-hmr'],
@@ -18,7 +16,7 @@ export default {
   html: {
     template: './src/index.ejs',
   },
-  disableDynamicImport: true,
-  publicPath: '/',
+  // disableDynamicImport: true,
+  publicPath: 'http://120.78.194.20/',
   hash: true,
 };
